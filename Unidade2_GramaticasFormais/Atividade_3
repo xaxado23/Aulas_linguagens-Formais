@@ -1,1 +1,151 @@
+# Exercícios — Gramáticas e Linguagens Formais
 
+## Bloco 1 — Derivação
+
+Dada a gramática:
+
+> **G₁: S → aS | b**
+
+### A) Gere a palavra `aaab`
+
+Para gerar a palavra `aaab`, aplicamos a produção `S → aS` três vezes e, no final, `S → b`.
+
+### Derivação
+
+```text
+S
+→ aS
+→ aaS
+→ aaaS
+→ aaab
+```
+
+Portanto, a palavra gerada é:
+
+```text
+aaab
+```
+
+### B) Como sabemos que a derivação terminou?
+
+A derivação terminou porque não existem mais símbolos **não terminais** na palavra final.
+
+O único símbolo não terminal da gramática é `S`. Enquanto existir `S`, ainda podemos aplicar alguma produção.
+
+Na palavra final:
+
+```text
+aaab
+```
+
+existem somente símbolos terminais (`a` e `b`).
+
+**Resposta:** A derivação termina quando todos os símbolos não terminais forem substituídos por símbolos terminais.
+
+---
+
+## Bloco 2 — GLC
+
+Dada a gramática:
+
+> **G₂: S → aSb | ε**
+
+### A) Gere a palavra `aaabbb`
+
+Para gerar `aaabbb`, aplicamos a produção `S → aSb` três vezes e, no final, utilizamos `S → ε`.
+
+### Derivação
+
+```text
+S
+→ aSb
+→ aaSbb
+→ aaaSbbb
+→ aaabbb
+```
+
+Portanto, a palavra gerada é:
+
+```text
+aaabbb
+```
+
+### B) É possível gerar `aabb`?
+
+**Sim, é possível.**
+
+Aplicamos a produção `S → aSb` duas vezes e depois substituímos `S` por `ε`.
+
+### Derivação
+
+```text
+S
+→ aSb
+→ aaSbb
+→ aabb
+```
+
+Portanto:
+
+```text
+aabb
+```
+
+pode ser gerada pela gramática.
+
+A gramática gera palavras no formato:
+
+```text
+aⁿbⁿ
+```
+
+Ou seja, a quantidade de `a`'s é igual à quantidade de `b`'s.
+
+---
+
+## Bloco 3 — Classificação
+
+Dada a gramática:
+
+> **S → aA | A → b**
+
+### Classificação
+
+A gramática é **Regular**.
+
+Isso ocorre porque suas produções possuem a forma de uma gramática regular linear à direita:
+
+```text
+S → aA
+A → b
+```
+
+### Derivação
+
+```text
+S
+→ aA
+→ ab
+```
+
+A palavra gerada é:
+
+```text
+ab
+```
+
+Portanto, a classificação é:
+
+> **Regular**
+
+---
+
+# Resumo das Respostas
+
+| Bloco | Questão | Resposta |
+|---|---|---|
+| 1 | A | `S → aS → aaS → aaaS → aaab` |
+| 1 | B | A derivação termina quando não existem mais símbolos não terminais. |
+| 2 | A | `S → aSb → aaSbb → aaaSbbb → aaabbb` |
+| 2 | B | Sim. `S → aSb → aaSbb → aabb` |
+| 3 | Classificação | **Regular** |
